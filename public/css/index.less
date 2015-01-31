@@ -1,4 +1,5 @@
-// out: index.css, cgompress: true
+// Que Frontend LESS
+// Authors: Ryan Gaus
 @import url(//fonts.googleapis.com/css?family=Oxygen);
 @import "../bootstrap/less/bootstrap.less";
 @import "dashboard.less";
@@ -19,6 +20,7 @@
 @import "material-button.less";
 @import "navbar.less";
 @import "things.less";
+@import "rooms.less";
 @import "modal.less";
 @import "things-add.less";
 @import "settings-list.less";
@@ -107,7 +109,7 @@ ul.list-group {
       display: inline-block;
     }
 
-    button.pull-right {
+    button.pull-right, .like-button {
       margin: 12px 0px 4px 10px;
       vertical-align: middle;
     }
@@ -129,7 +131,6 @@ ul.list-group {
     small {
       font-size: 60%;
       color: @gray-light;
-      margin-left: 10px;
     }
   }
 
@@ -203,6 +204,24 @@ ul.list-group {
         margin-top: 14px;
         max-height: 200px;
         height: 200px;
+        overflow-y: auto;
+
+        font-family: "monospace";
+
+        .log-info .text {
+          color: blue;
+          &:before { content: "> "; }
+        }
+
+        .log-warn .text {
+          color: orange;
+          &:before { content: "! "; }
+        }
+
+        .log-error .text {
+          color: red;
+          &:before { content: "X "; }
+        }
       }
     }
   }
